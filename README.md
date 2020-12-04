@@ -8,7 +8,7 @@ Themes for **[Marp for VS Code](https://github.com/marp-team/marp-vscode)**.
 ```json
 {
   "markdown.marp.themes": [
-    "https://raw.githubusercontent.com/taznica/marp-themes/master/themes/irodori.css"
+    "https://raw.githubusercontent.com/taznica/marp-themes/main/irodori/irodori.css"
   ]
 }
 ```

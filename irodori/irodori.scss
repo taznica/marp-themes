@@ -1,0 +1,427 @@
+/*!
+ * Marp irodori theme.
+ *
+ * @theme irodori
+ * @author taznica
+ * 
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ */
+
+$white: #FFFFF0;
+$light-gray:  #F0F0F0;
+$gray: #787878;
+$black: #323232;
+$blue: #3E97EF;
+$green: #42B983;
+$orange: #F4C14F;
+$pink: #DB6371;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github.min.css');
+
+@mixin color-scheme($bg, $text, $strong, $code, $codebg) {
+    background-color: $bg;
+    color: $text;
+
+    a, mark {
+        color: $strong;
+    }
+
+    code {
+        background-color: rgba($codebg, 10%);
+        color: $code;
+    }
+
+    /* for subtitle usage */
+    h5 {
+        color: mix($text, $bg, 80%);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        strong {
+            color: $strong;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+    }
+
+    strong {
+        color: $strong;
+    }
+
+    pre > code {
+        background-color: rgba($codebg, 10%);
+        color: $code;
+    }
+
+    header,
+    footer,
+    section::after,
+    blockquote::before,
+    blockquote::after {
+        color: mix($text, $bg, 80%);
+    }
+
+    table {
+        th,
+        td {
+            border-color: $text;
+        }
+    
+        thead th {
+            background: $text;
+            color: $bg;
+        }
+    
+        tbody > tr:nth-child(odd) {
+            td,
+            th {
+                background: rgba($text, 0.1);
+            }
+        }
+    }
+} /* end of color-scheme */
+
+svg[data-marp-fitting='svg'] {
+    max-height: 563px; // Slide height - padding * 2
+}
+
+h1 {
+    border-bottom: none;
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+    font-size: 1.6em;
+}
+  
+h2 {
+    border-bottom: none;
+    font-size: 1.3em;
+}
+  
+h3 {
+    font-size: 1.1em;
+}
+  
+h4 {
+    font-size: 1.05em;
+}
+  
+/* for subtitle usage */
+h5 {
+    margin-bottom: 0em;
+    font-size: 1em;
+}
+  
+/* for center text usage */
+h6 {
+    font-size: 1.3em; /* same as h2 */
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    strong {
+        font-weight: inherit;
+    }
+}
+
+hr {
+    height: 0;
+    padding-top: 0.25em;
+}
+
+a {
+    text-decoration: underline;
+}
+  
+p, blockquote {
+    margin: 1em 0 0 0;
+}
+  
+ul,
+ol {
+    > li {
+        margin: 0.3em 0 0 0;
+  
+        > p {
+            margin: 0.6em 0 0 0;
+        }
+    }
+}
+
+code {
+    display: inline-block;
+    font-family: 'NasuM', 'Roboto Mono', monospace;
+    font-size: 0.8em;
+    letter-spacing: 0;
+    margin: -0.1em 0.15em;
+    padding: 0.1em 0.2em;
+    vertical-align: baseline;
+}
+
+pre {
+    display: block;
+    margin: 1em 0 0 0;
+    min-height: 1em;
+    overflow: visible;
+  
+    code {
+        box-sizing: border-box;
+        margin: 0;
+        min-width: 100%;
+        padding: 0.5em;
+        font-size: 0.7em;
+
+        svg[data-marp-fitting='svg'] {
+            max-height: calc(580px - 1em);
+        }
+    }
+}
+
+@mixin title-mode {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        /* text-align: center; */
+
+        svg[data-marp-fitting='svg'] {
+            --preserve-aspect-ratio: xMidYMid meet;
+        }
+    }
+  
+    p {
+        text-align: center;
+    }
+  
+    blockquote {
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5,
+        > h6,
+        > p {
+            text-align: left;
+        }
+
+        svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+            --preserve-aspect-ratio: xMinYMin meet;
+        }
+    }
+
+    ul,
+    ol {
+        > li > p {
+            text-align: left;
+        }
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+} /* end of title-mode */
+
+blockquote {
+    margin: 1em 0 0 0;
+    padding: 0 1em;
+    position: relative;
+  
+    &::after,
+    &::before {
+        content: '“';
+        display: block;
+        font-family: 'Times New Roman', serif;
+        font-weight: bold;
+        position: absolute;
+    }
+  
+    &::before {
+        top: 0;
+        left: 0;
+    }
+  
+    &::after {
+        right: 0;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+  
+    > *:first-child {
+        margin-top: 0;
+    }
+}
+
+mark {
+    background: transparent;
+}
+  
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 1em 0 0 0;
+  
+    th,
+    td {
+        padding: 0.2em 0.4em;
+        border-width: 1px;
+        border-style: solid;
+    }
+}
+
+section {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-size: 29px;
+    font-family: 'Segoe UI';
+    height: 720px;
+    justify-content: start;
+    padding: 78.5px;
+    width: 1280px;
+  
+    > *:last-child,
+    &[data-footer] > :nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  
+    > *:first-child,
+    > header:first-child + * {
+      margin-top: 0;
+    }
+  
+    &::after {
+      position: absolute;
+      padding: 0;
+      right: 30px;
+      bottom: 21px;
+      font-size: 24px;
+    }
+
+    /* @mixin color-scheme($bg, $text, $strong, $code, $codebg) */
+    @include color-scheme($white, $black, $black, $white, $black);
+
+    &.invert {
+        @include color-scheme($black, $white, $white, $black, $white);
+    }
+
+    &.title {
+        @include title-mode
+    }
+
+    &.title-invert {
+        @include color-scheme($black, $white, $white, $black, $white);
+        @include title-mode
+    }
+
+    &.blue {
+        @include color-scheme($white, $black, $blue, $white, $black);
+    }
+
+    &.invert-blue {
+        @include color-scheme($blue, $white, $black, $black, $white);
+    }
+
+    &.title-blue {
+        @include color-scheme($white, $black, $blue, $white, $black);
+        @include title-mode
+    }
+
+    &.title-invert-blue {
+        @include color-scheme($blue, $white, $black, $black, $white);
+        @include title-mode
+    }
+
+    &.green {
+        @include color-scheme($white, $black, $green, $white, $black);
+    }
+
+    &.invert-green {
+        @include color-scheme($green, $white, $black, $black, $white);
+    }
+
+    &.title-green {
+        @include color-scheme($white, $black, $green, $white, $black);
+        @include title-mode
+    }
+
+    &.title-invert-green {
+        @include color-scheme($green, $white, $black, $black, $white);
+        @include title-mode
+    }
+
+    &.orange {
+        @include color-scheme($white, $black, $orange, $white, $black);
+    }
+
+    &.invert-orange {
+        @include color-scheme($orange, $white, $black, $black, $white);
+    }
+
+    &.title-orange {
+        @include color-scheme($white, $black, $orange, $white, $black);
+        @include title-mode
+    }
+
+    &.title-invert-orange {
+        @include color-scheme($orange, $white, $black, $black, $white);
+        @include title-mode
+    }
+
+    &.pink {
+        @include color-scheme($white, $black, $pink, $white, $black);
+    }
+
+    &.invert-pink {
+        @include color-scheme($pink, $white, $black, $black, $white);
+    }
+
+    &.title-pink {
+        @include color-scheme($white, $black, $pink, $white, $black);
+        @include title-mode
+    }
+
+    &.title-invert-pink {
+        @include color-scheme($pink, $white, $black, $black, $white);
+        @include title-mode
+    }
+}
+
+header,
+footer {
+  margin: 0;
+  position: absolute;
+  left: 30px;
+  /* color: rgba(#666, 0.75); */
+  font-size: 18px;
+}
+
+header {
+  top: 21px;
+}
+
+footer {
+  bottom: 21px;
+}

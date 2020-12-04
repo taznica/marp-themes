@@ -1,0 +1,2129 @@
+@charset "UTF-8";
+/*!
+ * Marp irodori theme.
+ *
+ * @theme irodori
+ * @author taznica
+ * 
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github.min.css");
+/* end of color-scheme */
+svg[data-marp-fitting='svg'] {
+  max-height: 563px;
+}
+
+h1 {
+  border-bottom: none;
+  margin-top: 0em;
+  margin-bottom: 1.5em;
+  font-size: 1.6em;
+}
+
+h2 {
+  border-bottom: none;
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h4 {
+  font-size: 1.05em;
+}
+
+/* for subtitle usage */
+h5 {
+  margin-bottom: 0em;
+  font-size: 1em;
+}
+
+/* for center text usage */
+h6 {
+  font-size: 1.3em;
+  /* same as h2 */
+  text-align: center;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: inherit;
+}
+
+hr {
+  height: 0;
+  padding-top: 0.25em;
+}
+
+a {
+  text-decoration: underline;
+}
+
+p, blockquote {
+  margin: 1em 0 0 0;
+}
+
+ul > li,
+ol > li {
+  margin: 0.3em 0 0 0;
+}
+
+ul > li > p,
+ol > li > p {
+  margin: 0.6em 0 0 0;
+}
+
+code {
+  display: inline-block;
+  font-family: 'NasuM', 'Roboto Mono', monospace;
+  font-size: 0.8em;
+  letter-spacing: 0;
+  margin: -0.1em 0.15em;
+  padding: 0.1em 0.2em;
+  vertical-align: baseline;
+}
+
+pre {
+  display: block;
+  margin: 1em 0 0 0;
+  min-height: 1em;
+  overflow: visible;
+}
+
+pre code {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  min-width: 100%;
+  padding: 0.5em;
+  font-size: 0.7em;
+}
+
+pre code svg[data-marp-fitting='svg'] {
+  max-height: calc(580px - 1em);
+}
+
+/* end of title-mode */
+blockquote {
+  margin: 1em 0 0 0;
+  padding: 0 1em;
+  position: relative;
+}
+
+blockquote::after, blockquote::before {
+  content: '“';
+  display: block;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  position: absolute;
+}
+
+blockquote::before {
+  top: 0;
+  left: 0;
+}
+
+blockquote::after {
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+blockquote > *:first-child {
+  margin-top: 0;
+}
+
+mark {
+  background: transparent;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1em 0 0 0;
+}
+
+table th,
+table td {
+  padding: 0.2em 0.4em;
+  border-width: 1px;
+  border-style: solid;
+}
+
+section {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 29px;
+  font-family: 'Segoe UI';
+  height: 720px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 78.5px;
+  width: 1280px;
+  /* @mixin color-scheme($bg, $text, $strong, $code, $codebg) */
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+}
+
+section > *:last-child,
+section[data-footer] > :nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+section > *:first-child,
+section > header:first-child + * {
+  margin-top: 0;
+}
+
+section::after {
+  position: absolute;
+  padding: 0;
+  right: 30px;
+  bottom: 21px;
+  font-size: 24px;
+}
+
+section a, section mark {
+  color: #323232;
+}
+
+section code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section h5 {
+  color: #5b5b58;
+}
+
+section h1 strong,
+section h2 strong,
+section h3 strong,
+section h4 strong,
+section h5 strong,
+section h6 strong {
+  color: #323232;
+}
+
+section h1 img,
+section h2 img,
+section h3 img,
+section h4 img,
+section h5 img,
+section h6 img {
+  display: block;
+  margin: auto;
+}
+
+section strong {
+  color: #323232;
+}
+
+section pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section header,
+section footer,
+section section::after,
+section blockquote::before,
+section blockquote::after {
+  color: #5b5b58;
+}
+
+section table th,
+section table td {
+  border-color: #323232;
+}
+
+section table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section table tbody > tr:nth-child(odd) td,
+section table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.invert {
+  background-color: #323232;
+  color: #FFFFF0;
+  /* for subtitle usage */
+}
+
+section.invert a, section.invert mark {
+  color: #FFFFF0;
+}
+
+section.invert code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert h5 {
+  color: #d6d6ca;
+}
+
+section.invert h1 strong,
+section.invert h2 strong,
+section.invert h3 strong,
+section.invert h4 strong,
+section.invert h5 strong,
+section.invert h6 strong {
+  color: #FFFFF0;
+}
+
+section.invert h1 img,
+section.invert h2 img,
+section.invert h3 img,
+section.invert h4 img,
+section.invert h5 img,
+section.invert h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.invert strong {
+  color: #FFFFF0;
+}
+
+section.invert pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert header,
+section.invert footer,
+section.invert section::after,
+section.invert blockquote::before,
+section.invert blockquote::after {
+  color: #d6d6ca;
+}
+
+section.invert table th,
+section.invert table td {
+  border-color: #FFFFF0;
+}
+
+section.invert table thead th {
+  background: #FFFFF0;
+  color: #323232;
+}
+
+section.invert table tbody > tr:nth-child(odd) td,
+section.invert table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title h1,
+section.title h2,
+section.title h3,
+section.title h4,
+section.title h5,
+section.title h6 {
+  /* text-align: center; */
+}
+
+section.title h1 svg[data-marp-fitting='svg'],
+section.title h2 svg[data-marp-fitting='svg'],
+section.title h3 svg[data-marp-fitting='svg'],
+section.title h4 svg[data-marp-fitting='svg'],
+section.title h5 svg[data-marp-fitting='svg'],
+section.title h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title p {
+  text-align: center;
+}
+
+section.title blockquote > h1,
+section.title blockquote > h2,
+section.title blockquote > h3,
+section.title blockquote > h4,
+section.title blockquote > h5,
+section.title blockquote > h6,
+section.title blockquote > p {
+  text-align: left;
+}
+
+section.title blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title ul > li > p,
+section.title ol > li > p {
+  text-align: left;
+}
+
+section.title table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.title-invert {
+  background-color: #323232;
+  color: #FFFFF0;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-invert a, section.title-invert mark {
+  color: #FFFFF0;
+}
+
+section.title-invert code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert h5 {
+  color: #d6d6ca;
+}
+
+section.title-invert h1 strong,
+section.title-invert h2 strong,
+section.title-invert h3 strong,
+section.title-invert h4 strong,
+section.title-invert h5 strong,
+section.title-invert h6 strong {
+  color: #FFFFF0;
+}
+
+section.title-invert h1 img,
+section.title-invert h2 img,
+section.title-invert h3 img,
+section.title-invert h4 img,
+section.title-invert h5 img,
+section.title-invert h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-invert strong {
+  color: #FFFFF0;
+}
+
+section.title-invert pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert header,
+section.title-invert footer,
+section.title-invert section::after,
+section.title-invert blockquote::before,
+section.title-invert blockquote::after {
+  color: #d6d6ca;
+}
+
+section.title-invert table th,
+section.title-invert table td {
+  border-color: #FFFFF0;
+}
+
+section.title-invert table thead th {
+  background: #FFFFF0;
+  color: #323232;
+}
+
+section.title-invert table tbody > tr:nth-child(odd) td,
+section.title-invert table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-invert h1,
+section.title-invert h2,
+section.title-invert h3,
+section.title-invert h4,
+section.title-invert h5,
+section.title-invert h6 {
+  /* text-align: center; */
+}
+
+section.title-invert h1 svg[data-marp-fitting='svg'],
+section.title-invert h2 svg[data-marp-fitting='svg'],
+section.title-invert h3 svg[data-marp-fitting='svg'],
+section.title-invert h4 svg[data-marp-fitting='svg'],
+section.title-invert h5 svg[data-marp-fitting='svg'],
+section.title-invert h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-invert p {
+  text-align: center;
+}
+
+section.title-invert blockquote > h1,
+section.title-invert blockquote > h2,
+section.title-invert blockquote > h3,
+section.title-invert blockquote > h4,
+section.title-invert blockquote > h5,
+section.title-invert blockquote > h6,
+section.title-invert blockquote > p {
+  text-align: left;
+}
+
+section.title-invert blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-invert ul > li > p,
+section.title-invert ol > li > p {
+  text-align: left;
+}
+
+section.title-invert table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.blue {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+}
+
+section.blue a, section.blue mark {
+  color: #3E97EF;
+}
+
+section.blue code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.blue h5 {
+  color: #5b5b58;
+}
+
+section.blue h1 strong,
+section.blue h2 strong,
+section.blue h3 strong,
+section.blue h4 strong,
+section.blue h5 strong,
+section.blue h6 strong {
+  color: #3E97EF;
+}
+
+section.blue h1 img,
+section.blue h2 img,
+section.blue h3 img,
+section.blue h4 img,
+section.blue h5 img,
+section.blue h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.blue strong {
+  color: #3E97EF;
+}
+
+section.blue pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.blue header,
+section.blue footer,
+section.blue section::after,
+section.blue blockquote::before,
+section.blue blockquote::after {
+  color: #5b5b58;
+}
+
+section.blue table th,
+section.blue table td {
+  border-color: #323232;
+}
+
+section.blue table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.blue table tbody > tr:nth-child(odd) td,
+section.blue table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.invert-blue {
+  background-color: #3E97EF;
+  color: #FFFFF0;
+  /* for subtitle usage */
+}
+
+section.invert-blue a, section.invert-blue mark {
+  color: #323232;
+}
+
+section.invert-blue code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-blue h5 {
+  color: #d8eaf0;
+}
+
+section.invert-blue h1 strong,
+section.invert-blue h2 strong,
+section.invert-blue h3 strong,
+section.invert-blue h4 strong,
+section.invert-blue h5 strong,
+section.invert-blue h6 strong {
+  color: #323232;
+}
+
+section.invert-blue h1 img,
+section.invert-blue h2 img,
+section.invert-blue h3 img,
+section.invert-blue h4 img,
+section.invert-blue h5 img,
+section.invert-blue h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.invert-blue strong {
+  color: #323232;
+}
+
+section.invert-blue pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-blue header,
+section.invert-blue footer,
+section.invert-blue section::after,
+section.invert-blue blockquote::before,
+section.invert-blue blockquote::after {
+  color: #d8eaf0;
+}
+
+section.invert-blue table th,
+section.invert-blue table td {
+  border-color: #FFFFF0;
+}
+
+section.invert-blue table thead th {
+  background: #FFFFF0;
+  color: #3E97EF;
+}
+
+section.invert-blue table tbody > tr:nth-child(odd) td,
+section.invert-blue table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-blue {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-blue a, section.title-blue mark {
+  color: #3E97EF;
+}
+
+section.title-blue code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-blue h5 {
+  color: #5b5b58;
+}
+
+section.title-blue h1 strong,
+section.title-blue h2 strong,
+section.title-blue h3 strong,
+section.title-blue h4 strong,
+section.title-blue h5 strong,
+section.title-blue h6 strong {
+  color: #3E97EF;
+}
+
+section.title-blue h1 img,
+section.title-blue h2 img,
+section.title-blue h3 img,
+section.title-blue h4 img,
+section.title-blue h5 img,
+section.title-blue h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-blue strong {
+  color: #3E97EF;
+}
+
+section.title-blue pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-blue header,
+section.title-blue footer,
+section.title-blue section::after,
+section.title-blue blockquote::before,
+section.title-blue blockquote::after {
+  color: #5b5b58;
+}
+
+section.title-blue table th,
+section.title-blue table td {
+  border-color: #323232;
+}
+
+section.title-blue table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.title-blue table tbody > tr:nth-child(odd) td,
+section.title-blue table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.title-blue h1,
+section.title-blue h2,
+section.title-blue h3,
+section.title-blue h4,
+section.title-blue h5,
+section.title-blue h6 {
+  /* text-align: center; */
+}
+
+section.title-blue h1 svg[data-marp-fitting='svg'],
+section.title-blue h2 svg[data-marp-fitting='svg'],
+section.title-blue h3 svg[data-marp-fitting='svg'],
+section.title-blue h4 svg[data-marp-fitting='svg'],
+section.title-blue h5 svg[data-marp-fitting='svg'],
+section.title-blue h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-blue p {
+  text-align: center;
+}
+
+section.title-blue blockquote > h1,
+section.title-blue blockquote > h2,
+section.title-blue blockquote > h3,
+section.title-blue blockquote > h4,
+section.title-blue blockquote > h5,
+section.title-blue blockquote > h6,
+section.title-blue blockquote > p {
+  text-align: left;
+}
+
+section.title-blue blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-blue ul > li > p,
+section.title-blue ol > li > p {
+  text-align: left;
+}
+
+section.title-blue table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.title-invert-blue {
+  background-color: #3E97EF;
+  color: #FFFFF0;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-invert-blue a, section.title-invert-blue mark {
+  color: #323232;
+}
+
+section.title-invert-blue code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-blue h5 {
+  color: #d8eaf0;
+}
+
+section.title-invert-blue h1 strong,
+section.title-invert-blue h2 strong,
+section.title-invert-blue h3 strong,
+section.title-invert-blue h4 strong,
+section.title-invert-blue h5 strong,
+section.title-invert-blue h6 strong {
+  color: #323232;
+}
+
+section.title-invert-blue h1 img,
+section.title-invert-blue h2 img,
+section.title-invert-blue h3 img,
+section.title-invert-blue h4 img,
+section.title-invert-blue h5 img,
+section.title-invert-blue h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-invert-blue strong {
+  color: #323232;
+}
+
+section.title-invert-blue pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-blue header,
+section.title-invert-blue footer,
+section.title-invert-blue section::after,
+section.title-invert-blue blockquote::before,
+section.title-invert-blue blockquote::after {
+  color: #d8eaf0;
+}
+
+section.title-invert-blue table th,
+section.title-invert-blue table td {
+  border-color: #FFFFF0;
+}
+
+section.title-invert-blue table thead th {
+  background: #FFFFF0;
+  color: #3E97EF;
+}
+
+section.title-invert-blue table tbody > tr:nth-child(odd) td,
+section.title-invert-blue table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-invert-blue h1,
+section.title-invert-blue h2,
+section.title-invert-blue h3,
+section.title-invert-blue h4,
+section.title-invert-blue h5,
+section.title-invert-blue h6 {
+  /* text-align: center; */
+}
+
+section.title-invert-blue h1 svg[data-marp-fitting='svg'],
+section.title-invert-blue h2 svg[data-marp-fitting='svg'],
+section.title-invert-blue h3 svg[data-marp-fitting='svg'],
+section.title-invert-blue h4 svg[data-marp-fitting='svg'],
+section.title-invert-blue h5 svg[data-marp-fitting='svg'],
+section.title-invert-blue h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-invert-blue p {
+  text-align: center;
+}
+
+section.title-invert-blue blockquote > h1,
+section.title-invert-blue blockquote > h2,
+section.title-invert-blue blockquote > h3,
+section.title-invert-blue blockquote > h4,
+section.title-invert-blue blockquote > h5,
+section.title-invert-blue blockquote > h6,
+section.title-invert-blue blockquote > p {
+  text-align: left;
+}
+
+section.title-invert-blue blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-invert-blue ul > li > p,
+section.title-invert-blue ol > li > p {
+  text-align: left;
+}
+
+section.title-invert-blue table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.green {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+}
+
+section.green a, section.green mark {
+  color: #42B983;
+}
+
+section.green code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.green h5 {
+  color: #5b5b58;
+}
+
+section.green h1 strong,
+section.green h2 strong,
+section.green h3 strong,
+section.green h4 strong,
+section.green h5 strong,
+section.green h6 strong {
+  color: #42B983;
+}
+
+section.green h1 img,
+section.green h2 img,
+section.green h3 img,
+section.green h4 img,
+section.green h5 img,
+section.green h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.green strong {
+  color: #42B983;
+}
+
+section.green pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.green header,
+section.green footer,
+section.green section::after,
+section.green blockquote::before,
+section.green blockquote::after {
+  color: #5b5b58;
+}
+
+section.green table th,
+section.green table td {
+  border-color: #323232;
+}
+
+section.green table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.green table tbody > tr:nth-child(odd) td,
+section.green table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.invert-green {
+  background-color: #42B983;
+  color: #FFFFF0;
+  /* for subtitle usage */
+}
+
+section.invert-green a, section.invert-green mark {
+  color: #323232;
+}
+
+section.invert-green code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-green h5 {
+  color: #d9f1da;
+}
+
+section.invert-green h1 strong,
+section.invert-green h2 strong,
+section.invert-green h3 strong,
+section.invert-green h4 strong,
+section.invert-green h5 strong,
+section.invert-green h6 strong {
+  color: #323232;
+}
+
+section.invert-green h1 img,
+section.invert-green h2 img,
+section.invert-green h3 img,
+section.invert-green h4 img,
+section.invert-green h5 img,
+section.invert-green h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.invert-green strong {
+  color: #323232;
+}
+
+section.invert-green pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-green header,
+section.invert-green footer,
+section.invert-green section::after,
+section.invert-green blockquote::before,
+section.invert-green blockquote::after {
+  color: #d9f1da;
+}
+
+section.invert-green table th,
+section.invert-green table td {
+  border-color: #FFFFF0;
+}
+
+section.invert-green table thead th {
+  background: #FFFFF0;
+  color: #42B983;
+}
+
+section.invert-green table tbody > tr:nth-child(odd) td,
+section.invert-green table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-green {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-green a, section.title-green mark {
+  color: #42B983;
+}
+
+section.title-green code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-green h5 {
+  color: #5b5b58;
+}
+
+section.title-green h1 strong,
+section.title-green h2 strong,
+section.title-green h3 strong,
+section.title-green h4 strong,
+section.title-green h5 strong,
+section.title-green h6 strong {
+  color: #42B983;
+}
+
+section.title-green h1 img,
+section.title-green h2 img,
+section.title-green h3 img,
+section.title-green h4 img,
+section.title-green h5 img,
+section.title-green h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-green strong {
+  color: #42B983;
+}
+
+section.title-green pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-green header,
+section.title-green footer,
+section.title-green section::after,
+section.title-green blockquote::before,
+section.title-green blockquote::after {
+  color: #5b5b58;
+}
+
+section.title-green table th,
+section.title-green table td {
+  border-color: #323232;
+}
+
+section.title-green table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.title-green table tbody > tr:nth-child(odd) td,
+section.title-green table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.title-green h1,
+section.title-green h2,
+section.title-green h3,
+section.title-green h4,
+section.title-green h5,
+section.title-green h6 {
+  /* text-align: center; */
+}
+
+section.title-green h1 svg[data-marp-fitting='svg'],
+section.title-green h2 svg[data-marp-fitting='svg'],
+section.title-green h3 svg[data-marp-fitting='svg'],
+section.title-green h4 svg[data-marp-fitting='svg'],
+section.title-green h5 svg[data-marp-fitting='svg'],
+section.title-green h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-green p {
+  text-align: center;
+}
+
+section.title-green blockquote > h1,
+section.title-green blockquote > h2,
+section.title-green blockquote > h3,
+section.title-green blockquote > h4,
+section.title-green blockquote > h5,
+section.title-green blockquote > h6,
+section.title-green blockquote > p {
+  text-align: left;
+}
+
+section.title-green blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-green ul > li > p,
+section.title-green ol > li > p {
+  text-align: left;
+}
+
+section.title-green table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.title-invert-green {
+  background-color: #42B983;
+  color: #FFFFF0;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-invert-green a, section.title-invert-green mark {
+  color: #323232;
+}
+
+section.title-invert-green code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-green h5 {
+  color: #d9f1da;
+}
+
+section.title-invert-green h1 strong,
+section.title-invert-green h2 strong,
+section.title-invert-green h3 strong,
+section.title-invert-green h4 strong,
+section.title-invert-green h5 strong,
+section.title-invert-green h6 strong {
+  color: #323232;
+}
+
+section.title-invert-green h1 img,
+section.title-invert-green h2 img,
+section.title-invert-green h3 img,
+section.title-invert-green h4 img,
+section.title-invert-green h5 img,
+section.title-invert-green h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-invert-green strong {
+  color: #323232;
+}
+
+section.title-invert-green pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-green header,
+section.title-invert-green footer,
+section.title-invert-green section::after,
+section.title-invert-green blockquote::before,
+section.title-invert-green blockquote::after {
+  color: #d9f1da;
+}
+
+section.title-invert-green table th,
+section.title-invert-green table td {
+  border-color: #FFFFF0;
+}
+
+section.title-invert-green table thead th {
+  background: #FFFFF0;
+  color: #42B983;
+}
+
+section.title-invert-green table tbody > tr:nth-child(odd) td,
+section.title-invert-green table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-invert-green h1,
+section.title-invert-green h2,
+section.title-invert-green h3,
+section.title-invert-green h4,
+section.title-invert-green h5,
+section.title-invert-green h6 {
+  /* text-align: center; */
+}
+
+section.title-invert-green h1 svg[data-marp-fitting='svg'],
+section.title-invert-green h2 svg[data-marp-fitting='svg'],
+section.title-invert-green h3 svg[data-marp-fitting='svg'],
+section.title-invert-green h4 svg[data-marp-fitting='svg'],
+section.title-invert-green h5 svg[data-marp-fitting='svg'],
+section.title-invert-green h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-invert-green p {
+  text-align: center;
+}
+
+section.title-invert-green blockquote > h1,
+section.title-invert-green blockquote > h2,
+section.title-invert-green blockquote > h3,
+section.title-invert-green blockquote > h4,
+section.title-invert-green blockquote > h5,
+section.title-invert-green blockquote > h6,
+section.title-invert-green blockquote > p {
+  text-align: left;
+}
+
+section.title-invert-green blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-invert-green ul > li > p,
+section.title-invert-green ol > li > p {
+  text-align: left;
+}
+
+section.title-invert-green table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.orange {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+}
+
+section.orange a, section.orange mark {
+  color: #F4C14F;
+}
+
+section.orange code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.orange h5 {
+  color: #5b5b58;
+}
+
+section.orange h1 strong,
+section.orange h2 strong,
+section.orange h3 strong,
+section.orange h4 strong,
+section.orange h5 strong,
+section.orange h6 strong {
+  color: #F4C14F;
+}
+
+section.orange h1 img,
+section.orange h2 img,
+section.orange h3 img,
+section.orange h4 img,
+section.orange h5 img,
+section.orange h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.orange strong {
+  color: #F4C14F;
+}
+
+section.orange pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.orange header,
+section.orange footer,
+section.orange section::after,
+section.orange blockquote::before,
+section.orange blockquote::after {
+  color: #5b5b58;
+}
+
+section.orange table th,
+section.orange table td {
+  border-color: #323232;
+}
+
+section.orange table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.orange table tbody > tr:nth-child(odd) td,
+section.orange table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.invert-orange {
+  background-color: #F4C14F;
+  color: #FFFFF0;
+  /* for subtitle usage */
+}
+
+section.invert-orange a, section.invert-orange mark {
+  color: #323232;
+}
+
+section.invert-orange code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-orange h5 {
+  color: #fdf3d0;
+}
+
+section.invert-orange h1 strong,
+section.invert-orange h2 strong,
+section.invert-orange h3 strong,
+section.invert-orange h4 strong,
+section.invert-orange h5 strong,
+section.invert-orange h6 strong {
+  color: #323232;
+}
+
+section.invert-orange h1 img,
+section.invert-orange h2 img,
+section.invert-orange h3 img,
+section.invert-orange h4 img,
+section.invert-orange h5 img,
+section.invert-orange h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.invert-orange strong {
+  color: #323232;
+}
+
+section.invert-orange pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-orange header,
+section.invert-orange footer,
+section.invert-orange section::after,
+section.invert-orange blockquote::before,
+section.invert-orange blockquote::after {
+  color: #fdf3d0;
+}
+
+section.invert-orange table th,
+section.invert-orange table td {
+  border-color: #FFFFF0;
+}
+
+section.invert-orange table thead th {
+  background: #FFFFF0;
+  color: #F4C14F;
+}
+
+section.invert-orange table tbody > tr:nth-child(odd) td,
+section.invert-orange table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-orange {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-orange a, section.title-orange mark {
+  color: #F4C14F;
+}
+
+section.title-orange code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-orange h5 {
+  color: #5b5b58;
+}
+
+section.title-orange h1 strong,
+section.title-orange h2 strong,
+section.title-orange h3 strong,
+section.title-orange h4 strong,
+section.title-orange h5 strong,
+section.title-orange h6 strong {
+  color: #F4C14F;
+}
+
+section.title-orange h1 img,
+section.title-orange h2 img,
+section.title-orange h3 img,
+section.title-orange h4 img,
+section.title-orange h5 img,
+section.title-orange h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-orange strong {
+  color: #F4C14F;
+}
+
+section.title-orange pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-orange header,
+section.title-orange footer,
+section.title-orange section::after,
+section.title-orange blockquote::before,
+section.title-orange blockquote::after {
+  color: #5b5b58;
+}
+
+section.title-orange table th,
+section.title-orange table td {
+  border-color: #323232;
+}
+
+section.title-orange table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.title-orange table tbody > tr:nth-child(odd) td,
+section.title-orange table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.title-orange h1,
+section.title-orange h2,
+section.title-orange h3,
+section.title-orange h4,
+section.title-orange h5,
+section.title-orange h6 {
+  /* text-align: center; */
+}
+
+section.title-orange h1 svg[data-marp-fitting='svg'],
+section.title-orange h2 svg[data-marp-fitting='svg'],
+section.title-orange h3 svg[data-marp-fitting='svg'],
+section.title-orange h4 svg[data-marp-fitting='svg'],
+section.title-orange h5 svg[data-marp-fitting='svg'],
+section.title-orange h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-orange p {
+  text-align: center;
+}
+
+section.title-orange blockquote > h1,
+section.title-orange blockquote > h2,
+section.title-orange blockquote > h3,
+section.title-orange blockquote > h4,
+section.title-orange blockquote > h5,
+section.title-orange blockquote > h6,
+section.title-orange blockquote > p {
+  text-align: left;
+}
+
+section.title-orange blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-orange ul > li > p,
+section.title-orange ol > li > p {
+  text-align: left;
+}
+
+section.title-orange table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.title-invert-orange {
+  background-color: #F4C14F;
+  color: #FFFFF0;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-invert-orange a, section.title-invert-orange mark {
+  color: #323232;
+}
+
+section.title-invert-orange code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-orange h5 {
+  color: #fdf3d0;
+}
+
+section.title-invert-orange h1 strong,
+section.title-invert-orange h2 strong,
+section.title-invert-orange h3 strong,
+section.title-invert-orange h4 strong,
+section.title-invert-orange h5 strong,
+section.title-invert-orange h6 strong {
+  color: #323232;
+}
+
+section.title-invert-orange h1 img,
+section.title-invert-orange h2 img,
+section.title-invert-orange h3 img,
+section.title-invert-orange h4 img,
+section.title-invert-orange h5 img,
+section.title-invert-orange h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-invert-orange strong {
+  color: #323232;
+}
+
+section.title-invert-orange pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-orange header,
+section.title-invert-orange footer,
+section.title-invert-orange section::after,
+section.title-invert-orange blockquote::before,
+section.title-invert-orange blockquote::after {
+  color: #fdf3d0;
+}
+
+section.title-invert-orange table th,
+section.title-invert-orange table td {
+  border-color: #FFFFF0;
+}
+
+section.title-invert-orange table thead th {
+  background: #FFFFF0;
+  color: #F4C14F;
+}
+
+section.title-invert-orange table tbody > tr:nth-child(odd) td,
+section.title-invert-orange table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-invert-orange h1,
+section.title-invert-orange h2,
+section.title-invert-orange h3,
+section.title-invert-orange h4,
+section.title-invert-orange h5,
+section.title-invert-orange h6 {
+  /* text-align: center; */
+}
+
+section.title-invert-orange h1 svg[data-marp-fitting='svg'],
+section.title-invert-orange h2 svg[data-marp-fitting='svg'],
+section.title-invert-orange h3 svg[data-marp-fitting='svg'],
+section.title-invert-orange h4 svg[data-marp-fitting='svg'],
+section.title-invert-orange h5 svg[data-marp-fitting='svg'],
+section.title-invert-orange h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-invert-orange p {
+  text-align: center;
+}
+
+section.title-invert-orange blockquote > h1,
+section.title-invert-orange blockquote > h2,
+section.title-invert-orange blockquote > h3,
+section.title-invert-orange blockquote > h4,
+section.title-invert-orange blockquote > h5,
+section.title-invert-orange blockquote > h6,
+section.title-invert-orange blockquote > p {
+  text-align: left;
+}
+
+section.title-invert-orange blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-invert-orange ul > li > p,
+section.title-invert-orange ol > li > p {
+  text-align: left;
+}
+
+section.title-invert-orange table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.pink {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+}
+
+section.pink a, section.pink mark {
+  color: #DB6371;
+}
+
+section.pink code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.pink h5 {
+  color: #5b5b58;
+}
+
+section.pink h1 strong,
+section.pink h2 strong,
+section.pink h3 strong,
+section.pink h4 strong,
+section.pink h5 strong,
+section.pink h6 strong {
+  color: #DB6371;
+}
+
+section.pink h1 img,
+section.pink h2 img,
+section.pink h3 img,
+section.pink h4 img,
+section.pink h5 img,
+section.pink h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.pink strong {
+  color: #DB6371;
+}
+
+section.pink pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.pink header,
+section.pink footer,
+section.pink section::after,
+section.pink blockquote::before,
+section.pink blockquote::after {
+  color: #5b5b58;
+}
+
+section.pink table th,
+section.pink table td {
+  border-color: #323232;
+}
+
+section.pink table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.pink table tbody > tr:nth-child(odd) td,
+section.pink table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.invert-pink {
+  background-color: #DB6371;
+  color: #FFFFF0;
+  /* for subtitle usage */
+}
+
+section.invert-pink a, section.invert-pink mark {
+  color: #323232;
+}
+
+section.invert-pink code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-pink h5 {
+  color: #f8e0d7;
+}
+
+section.invert-pink h1 strong,
+section.invert-pink h2 strong,
+section.invert-pink h3 strong,
+section.invert-pink h4 strong,
+section.invert-pink h5 strong,
+section.invert-pink h6 strong {
+  color: #323232;
+}
+
+section.invert-pink h1 img,
+section.invert-pink h2 img,
+section.invert-pink h3 img,
+section.invert-pink h4 img,
+section.invert-pink h5 img,
+section.invert-pink h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.invert-pink strong {
+  color: #323232;
+}
+
+section.invert-pink pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.invert-pink header,
+section.invert-pink footer,
+section.invert-pink section::after,
+section.invert-pink blockquote::before,
+section.invert-pink blockquote::after {
+  color: #f8e0d7;
+}
+
+section.invert-pink table th,
+section.invert-pink table td {
+  border-color: #FFFFF0;
+}
+
+section.invert-pink table thead th {
+  background: #FFFFF0;
+  color: #DB6371;
+}
+
+section.invert-pink table tbody > tr:nth-child(odd) td,
+section.invert-pink table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-pink {
+  background-color: #FFFFF0;
+  color: #323232;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-pink a, section.title-pink mark {
+  color: #DB6371;
+}
+
+section.title-pink code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-pink h5 {
+  color: #5b5b58;
+}
+
+section.title-pink h1 strong,
+section.title-pink h2 strong,
+section.title-pink h3 strong,
+section.title-pink h4 strong,
+section.title-pink h5 strong,
+section.title-pink h6 strong {
+  color: #DB6371;
+}
+
+section.title-pink h1 img,
+section.title-pink h2 img,
+section.title-pink h3 img,
+section.title-pink h4 img,
+section.title-pink h5 img,
+section.title-pink h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-pink strong {
+  color: #DB6371;
+}
+
+section.title-pink pre > code {
+  background-color: #323232;
+  color: #FFFFF0;
+}
+
+section.title-pink header,
+section.title-pink footer,
+section.title-pink section::after,
+section.title-pink blockquote::before,
+section.title-pink blockquote::after {
+  color: #5b5b58;
+}
+
+section.title-pink table th,
+section.title-pink table td {
+  border-color: #323232;
+}
+
+section.title-pink table thead th {
+  background: #323232;
+  color: #FFFFF0;
+}
+
+section.title-pink table tbody > tr:nth-child(odd) td,
+section.title-pink table tbody > tr:nth-child(odd) th {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+section.title-pink h1,
+section.title-pink h2,
+section.title-pink h3,
+section.title-pink h4,
+section.title-pink h5,
+section.title-pink h6 {
+  /* text-align: center; */
+}
+
+section.title-pink h1 svg[data-marp-fitting='svg'],
+section.title-pink h2 svg[data-marp-fitting='svg'],
+section.title-pink h3 svg[data-marp-fitting='svg'],
+section.title-pink h4 svg[data-marp-fitting='svg'],
+section.title-pink h5 svg[data-marp-fitting='svg'],
+section.title-pink h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-pink p {
+  text-align: center;
+}
+
+section.title-pink blockquote > h1,
+section.title-pink blockquote > h2,
+section.title-pink blockquote > h3,
+section.title-pink blockquote > h4,
+section.title-pink blockquote > h5,
+section.title-pink blockquote > h6,
+section.title-pink blockquote > p {
+  text-align: left;
+}
+
+section.title-pink blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-pink ul > li > p,
+section.title-pink ol > li > p {
+  text-align: left;
+}
+
+section.title-pink table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.title-invert-pink {
+  background-color: #DB6371;
+  color: #FFFFF0;
+  /* for subtitle usage */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.title-invert-pink a, section.title-invert-pink mark {
+  color: #323232;
+}
+
+section.title-invert-pink code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-pink h5 {
+  color: #f8e0d7;
+}
+
+section.title-invert-pink h1 strong,
+section.title-invert-pink h2 strong,
+section.title-invert-pink h3 strong,
+section.title-invert-pink h4 strong,
+section.title-invert-pink h5 strong,
+section.title-invert-pink h6 strong {
+  color: #323232;
+}
+
+section.title-invert-pink h1 img,
+section.title-invert-pink h2 img,
+section.title-invert-pink h3 img,
+section.title-invert-pink h4 img,
+section.title-invert-pink h5 img,
+section.title-invert-pink h6 img {
+  display: block;
+  margin: auto;
+}
+
+section.title-invert-pink strong {
+  color: #323232;
+}
+
+section.title-invert-pink pre > code {
+  background-color: ivory;
+  color: #323232;
+}
+
+section.title-invert-pink header,
+section.title-invert-pink footer,
+section.title-invert-pink section::after,
+section.title-invert-pink blockquote::before,
+section.title-invert-pink blockquote::after {
+  color: #f8e0d7;
+}
+
+section.title-invert-pink table th,
+section.title-invert-pink table td {
+  border-color: #FFFFF0;
+}
+
+section.title-invert-pink table thead th {
+  background: #FFFFF0;
+  color: #DB6371;
+}
+
+section.title-invert-pink table tbody > tr:nth-child(odd) td,
+section.title-invert-pink table tbody > tr:nth-child(odd) th {
+  background: rgba(255, 255, 240, 0.1);
+}
+
+section.title-invert-pink h1,
+section.title-invert-pink h2,
+section.title-invert-pink h3,
+section.title-invert-pink h4,
+section.title-invert-pink h5,
+section.title-invert-pink h6 {
+  /* text-align: center; */
+}
+
+section.title-invert-pink h1 svg[data-marp-fitting='svg'],
+section.title-invert-pink h2 svg[data-marp-fitting='svg'],
+section.title-invert-pink h3 svg[data-marp-fitting='svg'],
+section.title-invert-pink h4 svg[data-marp-fitting='svg'],
+section.title-invert-pink h5 svg[data-marp-fitting='svg'],
+section.title-invert-pink h6 svg[data-marp-fitting='svg'] {
+  --preserve-aspect-ratio: xMidYMid meet;
+}
+
+section.title-invert-pink p {
+  text-align: center;
+}
+
+section.title-invert-pink blockquote > h1,
+section.title-invert-pink blockquote > h2,
+section.title-invert-pink blockquote > h3,
+section.title-invert-pink blockquote > h4,
+section.title-invert-pink blockquote > h5,
+section.title-invert-pink blockquote > h6,
+section.title-invert-pink blockquote > p {
+  text-align: left;
+}
+
+section.title-invert-pink blockquote svg[data-marp-fitting='svg']:not([data-marp-fitting-math]) {
+  --preserve-aspect-ratio: xMinYMin meet;
+}
+
+section.title-invert-pink ul > li > p,
+section.title-invert-pink ol > li > p {
+  text-align: left;
+}
+
+section.title-invert-pink table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header,
+footer {
+  margin: 0;
+  position: absolute;
+  left: 30px;
+  /* color: rgba(#666, 0.75); */
+  font-size: 18px;
+}
+
+header {
+  top: 21px;
+}
+
+footer {
+  bottom: 21px;
+}
+/*# sourceMappingURL=irodori.css.map */
